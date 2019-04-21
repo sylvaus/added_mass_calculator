@@ -1,14 +1,12 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from added_mass_calculator.patch_makers.patch import Patch
+import numpy
+
+from added_mass_calculator.solid_parsers.patch import Patch
 
 
-class IntegralCalculator(object):
+class IntegralCalculator(ABC):
     @abstractmethod
-    def calculate_h_matrix(self, patches: List[Patch]):
-        pass
-
-    @abstractmethod
-    def calculate_g_matrix(self, patches: List[Patch]):
+    def calculate_h_g_matrix(self, patches: List[Patch]) -> (numpy.ndarray, numpy.ndarray):
         pass
