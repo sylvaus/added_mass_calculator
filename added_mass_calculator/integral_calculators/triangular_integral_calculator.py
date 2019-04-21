@@ -58,14 +58,3 @@ class TriangularIntegralCalculator(IntegralCalculator):
                 h_midbc * (arctanh(sin_midbcbh) + arctanh(sin_midabbh)) +
                 h_midca * (arctanh(sin_midcach) + arctanh(sin_midbcch))
         )
-
-
-if __name__ == '__main__':
-    print(TriangularIntegralCalculator._compute_singularity_h(
-        Patch([numpy.array([0.5, 0, 0]), numpy.array([-0.5, 0, 0]), numpy.array([0, 1, 0])],
-              numpy.array([0, 0, 1]),
-              numpy.array([0, 1 / 3, 0]),
-              1))
-    )
-
-    print(4 * arctanh(1 / sqrt(2)))

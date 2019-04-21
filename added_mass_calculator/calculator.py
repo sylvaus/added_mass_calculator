@@ -39,15 +39,3 @@ class AddedMassCalculator(object):
                 coefficients[i, j] = result / volume
 
         return coefficients
-
-
-def print_matrix(matrix):
-    nmax, mmax = matrix.shape
-    text = " ["
-    for n in range(nmax):
-        text += " ["
-        for m in range(mmax):
-            text += " {0},".format(matrix[n, m])
-        text += "],\n"
-    text += "]"
-    print(text)
